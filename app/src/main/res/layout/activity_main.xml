@@ -17,4 +17,31 @@
         android:background="#AA66CC"
         android:padding="10dp" />
 
+    <FrameLayout
+        android:id="@+id/sliderContainer"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="#DDDDDD"
+        android:layout_marginTop="150dp"
+        android:layout_marginHorizontal="30dp"
+        android:clipChildren="false">
+
+        <TextView
+            android:id="@+id/sliderText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Slide to Unlock"
+            android:textColor="#888888"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/sliderThumb"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@drawable/slider_thumb_bg" />
+    </FrameLayout>
+
 </FrameLayout>

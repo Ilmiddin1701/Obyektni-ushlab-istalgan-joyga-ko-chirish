@@ -1,6 +1,7 @@
 package uz.ilmiddin1701.obyektnikochirish
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private var dX = 0f
     private var maxX = 0f
 
-    @SuppressLint("ClickableViewAccessibility")
+    @SuppressLint("ClickableViewAccessibility", "ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -97,9 +98,11 @@ class MainActivity : AppCompatActivity() {
                 MotionEvent.ACTION_UP -> {
                     if (view.x >= maxX - 20) {
                         // Agar oxirigacha yetgan bo‘lsa
+                        binding.rootLayout.setBackgroundColor(Color.parseColor("#EEEEEE"))
                         Toast.makeText(this, "Qulf ochildi!", Toast.LENGTH_SHORT).show()
                     } else {
                         // Yetmagan bo‘lsa, tugmani orqaga qaytaramiz
+                        binding.rootLayout.setBackgroundColor(Color.parseColor("#A2A2A2FF"))
                         view.animate().x(0f).setDuration(300).start()
                     }
                     true
